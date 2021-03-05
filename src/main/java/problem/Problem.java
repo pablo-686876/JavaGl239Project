@@ -131,9 +131,7 @@ public class Problem {
      * @param gl переменная OpenGL для рисования
      */
     public void render(GL2 gl) {
-        for (Point point : points) {
-            point.render(gl);
-        }
+       Figures.renderCircle(gl, new Vector(0.1, 0.1), 5, true);
 
     }
 }

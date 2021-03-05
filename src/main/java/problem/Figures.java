@@ -74,29 +74,19 @@ public static void renderQuad(GL2 gl, Vector pos, Vector pos2, Vector pos3, Vect
 }
 public static void renderCircle(GL2 gl, Vector centre, double rad, boolean filled){
   if(filled==true){
-      gl.glBegin(GL.GL_POINTS);
-      gl.glVertex2d(centre.x, centre.y);
-      gl.glEnd();
-      for(int i=0; i<=360; i++){
-         double a=2*Math.PI/i;
-         double x=rad*Math.cos(a);
-          double y=rad*Math.sin(a);
-          gl.glBegin(GL.GL_TRIANGLE_FAN);
-          gl.glVertex2d(x, y);
-          gl.glEnd();
-      }
+gl.glBegin(GL.GL_LINE_STRIP);
+
+for(int i=0; i<=360; i++){
+
+    double x=rad*Math.cos(i);
+    double y=rad*Math.sin(i) ;
+    gl.glVertex2d(x, y);
+
+}gl.glEnd();
+     }
   }
-  else {
-      for(int i=0; i<=360; i++){
-          double a=2*Math.PI/i;
-          double x=rad*Math.cos(a);
-          double y=rad*Math.sin(a);
-          gl.glBegin(GL.GL_POINTS);
-          gl.glVertex2d(x, y);
-          gl.glEnd();
-      }
-  }
+
 
 }
 
-}
+
