@@ -3,6 +3,7 @@ package problem;
 
 import javax.media.opengl.GL;
 import javax.media.opengl.GL2;
+import java.util.Random;
 
 public class Triangle {
     public Vector a;
@@ -23,6 +24,11 @@ public class Triangle {
 
     public void render(GL2 gl){
         Figures.renderTriangle(gl,a,b,c,false);
+    }
+
+    public static Triangle getRandomTriangle(){
+        Random r= new Random();
+
     }
 
 }

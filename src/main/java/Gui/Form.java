@@ -1,7 +1,8 @@
 package Gui;
 
-import problem.Point;
+import problem.Vector1;
 import problem.Problem;
+import problem.Vector1;
 
 import javax.swing.*;
 import java.awt.*;
@@ -90,7 +91,7 @@ public class Form extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 double x = Double.parseDouble(xPointField.getText());
                 double y = Double.parseDouble(yPointField.getText());
-                int setVal = radioButton1.isSelected() ? Point.SET_1 : Point.SET_2;
+                int setVal = radioButton1.isSelected() ? Vector1.SET_1 : Vector1.SET_2;
                 renderer.problem.addPoint(x, y, setVal);
             }
         });

@@ -43,10 +43,10 @@ public class Problem {
      *
      * @param x      координата X точки
      * @param y      координата Y точки
-     * @param setVal номер множества
+
      */
-    public void addPoint(double x, double y, int setVal) {
-        Point point = new Point(x, y, setVal);
+    public void addPoint(Point x, Point y) {
+        Point point = new Point(x, y);
         points.add(point);
     }
 
@@ -83,7 +83,7 @@ public class Problem {
                 double y = sc.nextDouble();
                 int setVal = sc.nextInt();
                 sc.nextLine();
-                Point point = new Point(x, y, setVal);
+               Point point = new Point(x, y, setVal);
                 points.add(point);
             }
         } catch (Exception ex) {
@@ -97,7 +97,7 @@ public class Problem {
     public void saveToFile() {
         try {
             PrintWriter out = new PrintWriter(new FileWriter(FILE_NAME));
-            for (Point point : points) {
+            for (Point  point : points) {
                 out.printf("%.2f %.2f %d\n", point.x, point.y, point.setNumber);
             }
             out.close();
@@ -113,7 +113,7 @@ public class Problem {
      */
     public void addRandomPoints(int n) {
         for (int i = 0; i < n; i++) {
-            Point p = Point.getRandomPoint();
+           Point p = Point.getRandomPoint();
             points.add(p);
         }
     }
