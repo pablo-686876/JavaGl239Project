@@ -52,9 +52,19 @@ public class Triangle {
     public void render(GL2 gl) {
         Figures.renderTriangle(gl, a, b, c, false);
     }
+    public double Line(Point p, Point p2){
+       double l=Math.sqrt(Math.pow(p2.x-p.x, 2)+Math.pow(p2.y -p.y, 2));
+        return l;
 
-    public boolean isRegular() {
-        return true;
+    }
+
+    public boolean isRegular(Point p, Point p2, Point p3) {
+        double l1= Line(p, p2);
+        double l2= Line(p3, p2);
+        double l3= Line(p, p3);
+        if(l1==l2&&l2==l3&&l1==l3){
+        return true;}
+        else return false;
     }
 }
 

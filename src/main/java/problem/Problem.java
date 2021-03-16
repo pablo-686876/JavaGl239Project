@@ -66,7 +66,7 @@ public class Problem {
             for (Point p2 : points) {
                 for (Point p3 : points) {
                     Triangle triangle = new Triangle(p, p2, p3);
-                    if (triangle.isRegular())
+                    if (triangle.isRegular(p, p2, p3))
                         triangles.add(triangle);
                 }
             }
