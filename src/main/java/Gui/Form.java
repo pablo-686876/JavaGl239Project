@@ -1,8 +1,6 @@
 package Gui;
 
-import problem.Vector1;
 import problem.Problem;
-import problem.Vector1;
 
 import javax.swing.*;
 import java.awt.*;
@@ -27,8 +25,6 @@ public class Form extends JFrame {
     private JButton solveBtn;
     private JLabel problemText;
     private JButton addPoint;
-    private JRadioButton radioButton1;
-    private JRadioButton radioButton2;
     /**
      * таймер
      */
@@ -82,17 +78,14 @@ public class Form extends JFrame {
     private void initWidgets() {
         // задаём текст полю описания задачи
         problemText.setText("<html>" + Problem.PROBLEM_TEXT.replaceAll("\n", "<br>"));
-        // делаем первое радио выбранным
-        radioButton1.setSelected(true);
-        radioButton2.setSelected(false);
+
 
         addPoint.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 double x = Double.parseDouble(xPointField.getText());
                 double y = Double.parseDouble(yPointField.getText());
-                int setVal = radioButton1.isSelected() ? Vector1.SET_1 : Vector1.SET_2;
-                renderer.problem.addPoint(x, y, setVal);
+                renderer.problem.addPoint(x, y);
             }
         });
         randomBtn.addActionListener(new ActionListener() {
