@@ -40,9 +40,7 @@ public class Problem {
     public Problem() {
         points = new ArrayList<>();
         triangles = new ArrayList<>();
-        points.add(new Point(0.1, 0.2));
-        points.add(new Point(0.6, 0.7));
-        points.add(new Point(-0.1, 0.3));
+
     }
 
     /**

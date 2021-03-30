@@ -58,11 +58,12 @@ public class Triangle {
 
     }
 
+
     public boolean isRegular(Point p, Point p2, Point p3) {
         double l1= Line(p, p2);
         double l2= Line(p3, p2);
         double l3= Line(p, p3);
-        if(l1==l2&&l2==l3&&l1==l3){
+        if(Math.abs(l1 - l2) <= 0.001 && Math.abs(l2-l3) <= 0.001 && Math.abs(l1-l3) <= 0.001){
         return true;}
         else return false;
     }
